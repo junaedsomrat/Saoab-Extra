@@ -3,8 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <!-- Primary Meta Tags -->
-    <title>সাওয়াব এক্সট্রা - Saoab Extra</title>
+    <title>Saoab Extra - জিকির ও আমল</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <!-- Google Fonts: Hind Siliguri for beautiful Bangla typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    
+
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <title>সওয়াব এক্সট্রা - Saoab Extra</title>
     <meta name="title" content="সওয়াব এক্সট্রা - Saoab Extra">
     <meta name="description" content="অল্প কিছু সময়েই আপনার আমলনামায় যোগ করুন বিশাল সওয়াব">
     <meta name="keywords" content="Junaed Islam Somrat, Junaed Somrat, Junaed Islam Somrat Official, RohosshoPata Admin,  Islam Somrat Junaed, Portfolio Junaed Islam Somrat, জুনায়েদ,জুনায়েদ ইসলাম সম্রাট সম্পর্কে, জুনায়েদ সম্রাট সম্পর্কে, জুনায়েদ ইসলাম, জুনায়েদ ইসলাম সম্রাট, জুনায়েদ সম্রাট, মো জুনায়েদ, জুনায়েদ সম্রাট ইসলাম, ইসলাম সম্রাট জুনায়েদ, সম্রাট জুনায়েদ, Junaed Somrat Official, সওয়াব এক্সট্রা, সওয়াব এক্সট্রা অ্যাপ, সওয়াব অ্যাপ, জিকির করার অ্যাপ, জিকির অ্যাপ, জিকির করার ওয়েবসাইট, জিকির করার সাইট, জিকির, Zikir app, Zikir Website, Zikir project, Saoab Extra App, Saoab Extra, Saoab Extra Official, Saoab Extra Site, Saoab Extra Website, Saoab Builder, ভালো জিকির করার ওয়েবসাইট, সওয়াব বিল্ডার, আমল করার সাইট, আমল করার অ্যাপ, দৈনিক আমল, ইসলামীক ওয়েবসাইট, ইসলামিক অ্যাপ,">
@@ -49,8 +61,6 @@
         "https://www.instagram.com/junaedislamsomrat",
         "https://www.youtube.com/@JunaedSomrat"
       ],
-
-      },
       "description": "অনলাইন জিকির করার ওয়েবসাইট। আপনার আমল বৃদ্ধি করুন একটু সময় দিয়েই!."
     }
     </script>
@@ -58,212 +68,221 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="https://junaedsomrat.github.io/Saoab-Extra/favicon.png">
 
+    
+  
     <script src="style.js"></script>
 </head>
-<body>
+<body class="h-screen flex flex-col antialiased">
 
-    <!-- Header -->
-    <header class="header">
-        <div class="header-left">
-            <button id="backBtn" class="icon-btn hidden" onclick="navigate('home')">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+    <!-- Header / Top App Bar -->
+    <header class="bg-emerald-600 text-white shadow-md p-4 flex justify-between items-center z-10 sticky top-0">
+        <div class="flex items-center gap-3">
+            <button id="backBtn" class="hidden w-10 h-10 rounded-full hover:bg-emerald-700 flex justify-center items-center transition" onclick="navigate('home')">
+                <i class="fas fa-arrow-left text-xl"></i>
             </button>
             <div>
-                <h1>Saoab Extra</h1>
-                <p class="version-tag">v1.0.0 (Offline)</p>
+                <h1 class="text-2xl font-bold leading-none tracking-wide">Saoab Extra</h1>
+                <p class="text-emerald-200 text-xs">v1.0.0</p>
             </div>
         </div>
-        <button class="icon-btn" onclick="navigate('info')">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+        <button onclick="navigate('info')" class="w-10 h-10 rounded-full hover:bg-emerald-700 flex justify-center items-center transition">
+            <i class="fas fa-info-circle text-xl"></i>
         </button>
     </header>
 
-    <!-- Main Content -->
-    <main class="main-content">
+    <!-- Main Content Area -->
+    <main class="flex-1 overflow-y-auto p-4 md:p-8 flex flex-col items-center">
         
-        <!-- HOME VIEW -->
-        <div id="home" class="page-view active container">
-            <div class="text-center hero-section">
-                <h2>আসসালামু আলাইকুম</h2>
-                <p>আপনার জিকির ও আমলের নিত্যসঙ্গী</p>
+        <!-- ================= HOME VIEW ================= -->
+        <div id="home" class="page-view active w-full max-w-md mt-4">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-emerald-800 mb-2">আসসালামু আলাইকুম</h2>
+                <p class="text-emerald-600">আপনার জিকির ও আমলের নিত্যসঙ্গী</p>
             </div>
 
-            <div class="menu-card btn-3d" onclick="navigate('zikrCount')">
-                <div class="menu-left">
-                    <div class="menu-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 13l-3 3V8a2 2 0 0 0-4 0v9l-3-3a2 2 0 0 0-2.83 2.83l5.83 5.83a2 2 0 0 0 1.42.58h4.08a2 2 0 0 0 2-2V13z"></path></svg>
+            <div class="grid gap-6">
+                <!-- জিকির কাউন্ট বাটন -->
+                <div class="bg-white p-5 rounded-2xl shadow-sm border border-emerald-100 flex items-center justify-between cursor-pointer hover:shadow-md transition btn-3d" onclick="navigate('zikrCount')">
+                    <div class="flex items-center gap-4">
+                        <div class="bg-emerald-100 p-3 rounded-xl text-emerald-600">
+                            <i class="fas fa-fingerprint text-3xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-emerald-800">জিকির কাউন্ট</h3>
+                            <p class="text-sm text-gray-500">সাধারণ জিকির গণনা করুন</p>
+                        </div>
                     </div>
-                    <div class="menu-text">
-                        <h3>জিকির কাউন্ট</h3>
-                        <p>সাধারণ জিকির গণনা করুন</p>
-                    </div>
+                    <i class="fas fa-chevron-right text-emerald-300"></i>
                 </div>
-                <div class="arrow-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                </div>
-            </div>
 
-            <div class="menu-card btn-3d" onclick="navigate('sawabBuilder')">
-                <div class="menu-left">
-                    <div class="menu-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 12 12 17 22 12"></polyline><polyline points="2 17 12 22 22 17"></polyline></svg>
+                <!-- সওয়াব বিল্ডার বাটন -->
+                <div class="bg-white p-5 rounded-2xl shadow-sm border border-emerald-100 flex items-center justify-between cursor-pointer hover:shadow-md transition btn-3d" style="animation-delay: 0.1s;" onclick="navigate('sawabBuilder')">
+                    <div class="flex items-center gap-4">
+                        <div class="bg-emerald-100 p-3 rounded-xl text-emerald-600">
+                            <i class="fas fa-layer-group text-3xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-emerald-800">সওয়াব বিল্ডার</h3>
+                            <p class="text-sm text-gray-500">বিভিন্ন জিকিরের রেন্ডম কালেকশন</p>
+                        </div>
                     </div>
-                    <div class="menu-text">
-                        <h3>সওয়াব বিল্ডার</h3>
-                        <p>বিভিন্ন জিকিরের রেন্ডম কালেকশন</p> 
-                    </div>
-                </div> 
-                <div class="arrow-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    <i class="fas fa-chevron-right text-emerald-300"></i>
                 </div>
-            </div>
 
-            <div class="menu-card btn-3d" onclick="navigate('deeds')">
-                <div class="menu-left">
-                    <div class="menu-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg>
+                <!-- আমার আমল বাটন -->
+                <div class="bg-white p-5 rounded-2xl shadow-sm border border-emerald-100 flex items-center justify-between cursor-pointer hover:shadow-md transition btn-3d" style="animation-delay: 0.2s;" onclick="navigate('deeds')">
+                    <div class="flex items-center gap-4">
+                        <div class="bg-emerald-100 p-3 rounded-xl text-emerald-600">
+                            <i class="fas fa-chart-pie text-3xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-emerald-800">আমার আমল</h3>
+                            <p class="text-sm text-gray-500">আপনার সকল আমলের হিসাব</p>
+                        </div>
                     </div>
-                    <div class="menu-text">
-                        <h3>আমার আমল</h3>
-                        <p>আপনার সকল আমলের হিসাব</p>
-                    </div>
-                </div>
-                <div class="arrow-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    <i class="fas fa-chevron-right text-emerald-300"></i>
                 </div>
             </div>
             
-            <div class="quote-box text-center">
-                <div class="quote-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"></path></svg>
-                </div>
-                <p class="quote-text">"যে ব্যক্তি আল্লাহর জিকির করে এবং যে জিকির করে না, তাদের উদাহরণ হলো জীবিত ও মৃত ব্যক্তির মতো।"</p>
-                <p class="text-xs quote-author">- বুখারী</p>
+            <!-- Daily Quote -->
+            <div class="mt-10 bg-emerald-100/50 p-4 rounded-xl text-center border border-emerald-200">
+                <i class="fas fa-quote-left text-emerald-400 mb-2 opacity-50"></i>
+                <p class="text-emerald-800 italic font-medium">"যে ব্যক্তি আল্লাহর জিকির করে এবং যে জিকির করে না, তাদের উদাহরণ হলো জীবিত ও মৃত ব্যক্তির মতো।"</p>
+                <p class="text-xs text-emerald-600 mt-2">- বুখারী</p>
             </div>
         </div>
 
-        <!-- ZIKR COUNT VIEW -->
-        <div id="zikrCount" class="page-view container text-center">
-            <h2 class="view-title">জিকির কাউন্ট</h2> 
-            <p class="view-subtitle">তাসবিহ পাঠ করুন</p> <br>
+        <!-- ================= ZIKR COUNT VIEW ================= -->
+        <div id="zikrCount" class="page-view w-full max-w-md text-center pt-8">
+            <h2 class="text-2xl font-bold text-emerald-800 mb-1">জিকির কাউন্ট</h2>
+            <p class="text-emerald-600 mb-8">তসবিহ পাঠ করুন</p>
             
-            <div class="display-box">
-                <div class="display-value font-mono" id="zikrDisplay">0</div>
-                <div class="text-sm uppercase label">মোট গণনা</div>
+            <div class="bg-white rounded-3xl p-8 shadow-lg border border-emerald-100 mb-12">
+                <div class="text-6xl font-bold text-emerald-600 mb-2 font-mono" id="zikrDisplay">0</div>
+                <div class="text-sm text-gray-400 uppercase tracking-widest">মোট গণনা</div>
             </div>
 
-            <div class="counter-btn-area">
+            <div class="flex justify-center items-center relative h-64">
+                <!-- The 3D Circle Button -->
                 <button class="btn-3d-circle" id="zikrBtn">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    <i class="fas fa-plus"></i>
                 </button>
             </div>
             
-            <button onclick="resetSpecificCount('zikr')" class="reset-link">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg> 
-                এই কাউন্ট রিসেট করুন
+            <button onclick="resetSpecificCount('zikr')" class="mt-8 text-red-400 hover:text-red-600 underline text-sm">
+                <i class="fas fa-redo-alt mr-1"></i> এই কাউন্ট রিসেট করুন
             </button>
         </div>
 
-        <!-- SAWAB BUILDER VIEW -->
-        <div id="sawabBuilder" class="page-view container text-center">
-            <h2 class="view-title">সওয়াব বিল্ডার</h2>
-            <p class="view-subtitle">রেন্ডম জিকির কালেকশন</p> <br>
+        <!-- ================= SAWAB BUILDER VIEW ================= -->
+        <div id="sawabBuilder" class="page-view w-full max-w-md text-center pt-8">
+            <h2 class="text-2xl font-bold text-emerald-800 mb-1">সওয়াব বিল্ডার</h2>
+            <p class="text-emerald-600 mb-8">রেন্ডম জিকির কালেকশন</p>
             
-            <div class="display-box compact">
-                <div class="display-value font-mono" id="sawabDisplay">0</div>
-                <div class="text-sm uppercase label">সওয়াব পয়েন্ট</div>
+            <div class="bg-white rounded-3xl p-6 shadow-lg border border-emerald-100 mb-8">
+                <div class="text-5xl font-bold text-emerald-600 mb-2 font-mono" id="sawabDisplay">0</div>
+                <div class="text-sm text-gray-400 uppercase tracking-widest">সওয়াব পয়েন্ট</div>
             </div>
 
-            <div id="zikrTextContainer" class="zikr-text-display">
-                <p class="text-sm italic placeholder">ক্লিক করলে এখানে জিকির ভেসে উঠবে</p>
+            <!-- Dynamic Zikr Display Area -->
+            <div class="h-24 flex items-end justify-center mb-4 relative" id="zikrTextContainer">
+                <p class="text-gray-400 text-sm italic absolute bottom-0">ক্লিক করলে এখানে জিকির ভেসে উঠবে</p>
             </div>
 
-            <button class="btn-3d btn-sawab" id="sawabBtn">
-                ক্লিক করুন
+            <div class="flex justify-center mt-4">
+                <button class="bg-emerald-600 text-white text-2xl font-bold py-6 px-12 rounded-2xl btn-3d w-full max-w-xs" id="sawabBtn">
+                    ক্লিক করুন
+                </button>
+            </div>
+        </div>
+
+        <!-- ================= DEEDS (আমলনামা) VIEW ================= -->
+        <div id="deeds" class="page-view w-full max-w-md pt-4">
+            <h2 class="text-2xl font-bold text-emerald-800 mb-6 text-center border-b-2 border-emerald-200 pb-2">আমলনামা</h2>
+            
+            <!-- Rank / Level -->
+            <div class="bg-gradient-to-r from-emerald-500 to-teal-600 rounded-2xl p-6 text-white shadow-lg mb-6 text-center relative overflow-hidden">
+                <i class="fas fa-award absolute -right-4 -bottom-4 text-7xl opacity-20"></i>
+                <p class="text-emerald-100 text-sm mb-1">আপনার বর্তমান মর্যাদা</p>
+                <h3 class="text-3xl font-bold mb-2" id="userRank">মুবতাদি</h3>
+                <p class="text-xs bg-black/20 inline-block px-3 py-1 rounded-full"><span id="totalAmolRank">0</span> টি সর্বমোট আমল</p>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 mb-6">
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-emerald-100 text-center">
+                    <i class="fas fa-fingerprint text-emerald-400 text-2xl mb-2"></i>
+                    <p class="text-sm text-gray-500">জিকির কাউন্ট</p>
+                    <p class="text-2xl font-bold text-emerald-700 font-mono" id="statZikr">0</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-emerald-100 text-center">
+                    <i class="fas fa-layer-group text-emerald-400 text-2xl mb-2"></i>
+                    <p class="text-sm text-gray-500">সওয়াব বিল্ডার</p>
+                    <p class="text-2xl font-bold text-emerald-700 font-mono" id="statSawab">0</p>
+                </div>
+            </div>
+
+            <!-- Daily Goal -->
+            <div class="bg-white p-5 rounded-xl shadow-sm border border-emerald-100 mb-8">
+                <div class="flex justify-between items-end mb-2">
+                    <h4 class="font-bold text-emerald-800">আজকের লক্ষ্য (১০০০)</h4>
+                    <span class="text-sm font-bold text-emerald-600" id="goalPercent">0%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-3 mb-1 overflow-hidden">
+                    <div class="bg-emerald-500 h-3 rounded-full transition-all duration-500" id="goalBar" style="width: 0%"></div>
+                </div>
+                <p class="text-xs text-gray-500 text-right" id="goalRemaining">আরও ১০০০ টি বাকি</p>
+            </div>
+
+            <button onclick="confirmResetAll()" class="w-full bg-red-50 text-red-600 border border-red-200 font-bold py-4 rounded-xl hover:bg-red-100 transition flex justify-center items-center gap-2 shadow-sm">
+                <i class="fas fa-trash-alt"></i> সম্পূর্ণ আমল ডিলিট করুন (Reset)
             </button>
+            <p class="text-xs text-center text-gray-400 mt-2">এটি ব্রাউজার থেকে সব ডেটা চিরতরে মুছে ফেলবে।</p>
         </div>
 
-        <!-- DEEDS VIEW -->
-        <div id="deeds" class="page-view container">
-            <h2 class="text-center amol-title">আমলনামা</h2>
+        <!-- ================= INFO / ABOUT VIEW ================= -->
+        <div id="info" class="page-view w-full max-w-md pt-8 text-center">
+            <div class="w-24 h-24 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-4xl mx-auto mb-4 shadow-inner">
+                <i class="fas fa-leaf"></i>
+            </div>
+            <h2 class="text-3xl font-bold text-emerald-800 mb-1">Saoab Extra</h2>
+            <p class="text-emerald-600 font-medium mb-6">ভার্সন: ১.০.০</p>
             
-            <div class="rank-card text-center">
-                <svg class="rank-bg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
-                <p class="rank-label">আপনার বর্তমান মর্যাদা</p>
-                <h3 id="userRank" style="font-size: 30px;">মুবতাদি</h3><br>
-                <span class="rank-badge"> 
-                    <span id="totalAmolRank">0</span> টি সর্বমোট আমল
-                </span>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-emerald-100 mb-6 text-left">
+                <h3 class="font-bold text-gray-700 border-b pb-2 mb-3">অ্যাপ সম্পর্কে</h3>
+                <p class="text-sm text-gray-600 leading-relaxed">
+                    এই অ্যাপটি দৈনন্দিন জিকির ও আমল গণনা করার সুবিধার্থে তৈরি করা হয়েছে। এটি সম্পূর্ণ লোকাল স্টোরেজ ব্যবহার করে, তাই ইন্টারনেট ছাড়াই কাজ করবে এবং আপনার ডেটা আপনার ফোনেই সুরক্ষিত থাকবে।
+                </p>
             </div>
 
-            <div class="stats-grid text-center">
-                <div class="stat-box">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 13l-3 3V8a2 2 0 0 0-4 0v9l-3-3a2 2 0 0 0-2.83 2.83l5.83 5.83a2 2 0 0 0 1.42.58h4.08a2 2 0 0 0 2-2V13z"></path></svg>
-                    <p class="stat-label">জিকির কাউন্ট</p>
-                    <p class="stat-value font-mono" id="statZikr">0</p>
-                </div>
-                <div class="stat-box">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 12 12 17 22 12"></polyline><polyline points="2 17 12 22 22 17"></polyline></svg>
-                    <p class="stat-label">সওয়াব বিল্ডার</p>
-                    <p class="stat-value font-mono" id="statSawab">0</p>
-                </div>
+            <div class="bg-emerald-50 p-6 rounded-2xl border border-emerald-200 text-left">
+                <h3 class="font-bold text-emerald-800 border-b border-emerald-200 pb-2 mb-3">ডেভেলপার ইনফো</h3>
+                <p class="text-sm text-gray-700 mb-2"><strong>ডেভেলপার:</strong> জুনায়েদ ইসলাম সম্রাট (Junaed Islam Somrat)</p>
+                <a href="https://junaedsomrat.github.io" target="_blank" class="inline-flex items-center gap-2 text-emerald-600 hover:text-emerald-800 font-medium bg-white px-4 py-2 rounded-lg shadow-sm border border-emerald-100 transition">
+                    <i class="fas fa-globe"></i> ওয়েবসাইট ভিজিট করুন
+                </a>
             </div>
-
-            <div class="goal-box">
-                <div class="goal-header">
-                    <h4>আজকের লক্ষ্য (১০০০)</h4>
-                    <span id="goalPercent">0%</span>
-                </div>
-                <div class="progress-bg">
-                    <div class="progress-bar" id="goalBar"></div>
-                </div> <br>
-                <p class="text-xs text-right goal-meta" id="goalRemaining">আরও ১০০০ টি বাকি</p>
-            </div>
-
-            <button onclick="confirmResetAll()" class="btn-reset-all">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
-                সম্পূর্ণ আমল ডিলিট করুন (Reset)
-            </button> <br>
-            <p class="text-xs text-center warning-text">এটি ব্রাউজার থেকে সব ডেটা চিরতরে মুছে ফেলবে।</p>
         </div>
 
-        <!-- INFO VIEW -->
-        <div id="info" class="page-view container text-center">
-            <div class="info-logo">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><line x1="2" y1="22" x2="11" y2="20"></line></svg>
-            </div>
-            <h2 class="info-title">Saoab Extra</h2>
-            <p class="info-version">ভার্সন: ১.০.০ (Offline)</p>
-            <br>
-            <div class="info-card">
-                <h3>অ্যাপ সম্পর্কে</h3>
-                <p>এই অ্যাপটি দৈনন্দিন জিকির ও আমল গণনা করার সুবিধার্থে তৈরি করা হয়েছে। এটি সম্পূর্ণ <b>অফলাইন</b> এবং লোকাল স্টোরেজ ব্যবহার করে।</p>
-            </div>
-
-            <div class="info-card dev-card">
-                <h3>ডেভেলপার সম্পর্কে</h3>
-                <p><strong>ডেভেলপার:</strong> জুনায়েদ ইসলাম সম্রাট</p>
-                <a href="#" class="web-link">ওয়েবসাইট ভিজিট করুন</a>
-            </div>
-        </div>
     </main>
 
-    <!-- Modal -->
-    <div id="customModal" class="modal-overlay">
-        <div class="modal-content text-center">
-            <div class="modal-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
-            </div>
-            <h3>সতর্কতা!</h3>
-            <p>আপনি কি নিশ্চিত যে সমস্ত আমল মুছে ফেলতে চান? এটি আর ফেরত পাওয়া যাবে না।</p>
-            <div class="modal-btns">
-                <button onclick="closeModal()" class="btn-cancel">বাতিল</button>
-                <button onclick="executeResetAll()" class="btn-delete">হ্যাঁ, মুছুন</button>
+    <!-- Custom Modal for Alerts -->
+    <div id="customModal" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-white p-6 rounded-2xl shadow-xl max-w-sm w-[90%] transform scale-95 transition-transform duration-300" id="modalContent">
+            <div class="text-center">
+                <div class="w-16 h-16 bg-red-100 text-red-500 rounded-full flex items-center justify-center text-3xl mx-auto mb-4">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-2">সতর্কতা!</h3>
+                <p class="text-gray-600 mb-6 text-sm">আপনি কি নিশ্চিত যে সমস্ত আমল মুছে ফেলতে চান? এটি আর ফেরত পাওয়া যাবে না।</p>
+                <div class="flex gap-3 justify-center">
+                    <button onclick="closeModal()" class="px-5 py-2 bg-gray-100 text-gray-700 rounded-lg font-medium hover:bg-gray-200">বাতিল</button>
+                    <button onclick="executeResetAll()" class="px-5 py-2 bg-red-500 text-white rounded-lg font-medium hover:bg-red-600 shadow-md">হ্যাঁ, মুছুন</button>
+                </div>
             </div>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js"
+    </script>
 </body>
 </html>
-
